@@ -325,16 +325,20 @@ section { padding: 90px 0; }
 }
 .steps {
   list-style: none;
+  counter-reset: step;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
 .step {
+  counter-increment: step;
   background: var(--bg-alt);
   border-radius: 16px;
   padding: 32px;
 }
-.step-num {
+.step::marker { content: none; }
+.step::before {
+  content: counter(step);
   display: grid;
   place-items: center;
   width: 48px;
@@ -365,31 +369,7 @@ section { padding: 90px 0; }
     column-gap: 16px;
     padding: 20px;
   }
-  .step-num { grid-row: span 2; width: 40px; height: 40px; font-size: 1.1rem; margin-bottom: 0; }
-}
-
-/* Reviews */
-.reviews-grid {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-.review {
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.stars { display: flex; gap: 2px; color: var(--blue); }
-.review blockquote { color: var(--muted); font-size: 1.1rem; flex-grow: 1; }
-.review-name { font-weight: 700; color: var(--navy); }
-
-@media (max-width: 860px) {
-  .reviews-grid { grid-template-columns: 1fr; gap: 12px; }
-  .review { padding: 24px; }
+  .step::before { grid-row: span 2; width: 40px; height: 40px; font-size: 1.1rem; margin-bottom: 0; }
 }
 
 /* CTA band */
