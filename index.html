@@ -37,6 +37,7 @@
       <nav id="site-nav" class="nav-menu" aria-label="Main">
         <ul class="nav-links">
           <li><a href="#services">Services</a></li>
+          <li><a href="#renewables">Heat pumps</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -117,6 +118,53 @@
             <p>Taps, toilets, cylinders, pumps and all the everyday jobs.</p>
           </div>
         </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="renewables" class="renewables">
+    <div class="container renewables-grid">
+      <div class="renewables-intro">
+        <p class="eyebrow">Renewable energy</p>
+        <h2 class="section-title">Heat pumps &amp; ventilation for a warmer, more efficient home</h2>
+        <p class="renewables-lead">Whether it's a new build or an upgrade, we design, install and service heat pump and ventilation systems that keep your home comfortable and your running costs down.</p>
+        <ul class="tick-list">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Works with underfloor heating and radiators</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Ideal for new builds and retrofits</span></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span>Help with SEAI grant paperwork</span></li>
+        </ul>
+        <!-- TODO: confirm with client that they help with SEAI grants before launch -->
+        <a href="#contact" class="btn btn-primary">Ask about a heat pump</a>
+      </div>
+      <ul class="renewables-cards">
+          <li class="card">
+            <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="9" cy="12" r="4"/><path d="M9 8v8M5 12h8"/><path d="M16 9h3M16 12h3M16 15h3"/></svg></div>
+            <div>
+              <h3>Air-to-water heat pumps</h3>
+              <p>Supply and installation of efficient heat pumps for heating and hot water.</p>
+            </div>
+          </li>
+          <li class="card">
+            <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.5 2.5-2.5-.5-.5-2.5 2.5-2.5z"/></svg></div>
+            <div>
+              <h3>Heat pump servicing</h3>
+              <p>Annual services, repairs and settings checks to keep your system running efficiently.</p>
+            </div>
+          </li>
+          <li class="card">
+            <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 14h6M13 12l2 2-2 2"/></svg></div>
+            <div>
+              <h3>Heat recovery ventilation</h3>
+              <p>MVHR systems that bring in fresh air while keeping the heat in.</p>
+            </div>
+          </li>
+          <li class="card">
+            <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h11a3 3 0 1 0-3-3"/><path d="M3 12h15a3 3 0 1 1-3 3"/><path d="M3 16h7"/></svg></div>
+            <div>
+              <h3>Ventilation systems</h3>
+              <p>Demand-controlled and extract ventilation to tackle condensation and damp.</p>
+            </div>
+          </li>
       </ul>
     </div>
   </section>
@@ -219,7 +267,7 @@
           toggle.focus();
         }
       });
-      window.matchMedia("(min-width: 861px)").addEventListener("change", function (e) {
+      window.matchMedia("(min-width: 1025px)").addEventListener("change", function (e) {
         if (e.matches) setOpen(false);
       });
     })();
