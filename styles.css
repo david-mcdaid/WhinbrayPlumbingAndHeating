@@ -128,7 +128,7 @@ a { color: inherit; text-decoration: none; }
   list-style: none;
   font-weight: 600;
 }
-.nav-links a { color: var(--text); padding: 8px 0; }
+.nav-links a { color: var(--text); padding: 8px 0; white-space: nowrap; }
 .nav-links a:hover { color: var(--blue); }
 .nav-toggle {
   display: none;
@@ -185,7 +185,8 @@ a { color: inherit; text-decoration: none; }
 /* Sections */
 section { padding: 90px 0; }
 .section-title {
-  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 1.15;
   letter-spacing: -0.02em;
   color: var(--navy);
   margin-bottom: 12px;
@@ -252,7 +253,7 @@ section { padding: 90px 0; }
   display: grid;
   place-items: center;
 }
-.card h3 { color: var(--navy); font-size: 1.3rem; font-weight: 700; margin-bottom: 6px; }
+.card h3 { color: var(--navy); font-size: 1.3rem; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
 .card p { color: var(--muted); }
 
 @media (max-width: 1024px) {
@@ -267,8 +268,46 @@ section { padding: 90px 0; }
   .card h3 { font-size: 1.15rem; margin-bottom: 4px; }
 }
 
+/* Renewables */
+.renewables { background: var(--blue-light); }
+.renewables-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 64px;
+  align-items: center;
+}
+.renewables-intro .section-title { margin-bottom: 20px; }
+.renewables-lead { color: var(--muted); font-size: 1.15rem; margin-bottom: 24px; }
+.tick-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin-bottom: 32px;
+  font-weight: 600;
+  color: var(--navy);
+}
+.tick-list li { display: flex; gap: 10px; align-items: flex-start; }
+.tick-list svg { color: var(--blue); flex-shrink: 0; margin-top: 3px; }
+.renewables-cards {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.renewables-cards .card { border-color: transparent; }
+.renewables-cards .card-icon { background: var(--blue-light); }
+
+@media (max-width: 1024px) {
+  .renewables-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 600px) {
+  .renewables-cards { grid-template-columns: 1fr; gap: 12px; }
+  .renewables-lead { font-size: 1.0625rem; }
+  .renewables-intro .btn { width: 100%; }
+}
+
 /* About */
-.about { background: var(--bg-alt); }
+.about { background: var(--bg); }
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -383,12 +422,8 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 860px) {
+@media (max-width: 1024px) {
   :root { --header-h: 68px; }
-  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-  section { padding: 64px 0; }
-  .hero { padding: 56px 0 64px; }
-
   /* Mobile menu (only hidden when JS is available to open it) */
   .nav-toggle { display: inline-flex; }
   .js .nav-menu {
@@ -418,6 +453,12 @@ footer {
   /* Without JS, show the links inline under the logo */
   html:not(.js) .nav { flex-wrap: wrap; height: auto; padding: 12px 20px; }
   html:not(.js) .nav-toggle { display: none; }
+}
+
+@media (max-width: 860px) {
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  section { padding: 64px 0; }
+  .hero { padding: 56px 0 64px; }
 }
 
 @media (max-width: 600px) {
