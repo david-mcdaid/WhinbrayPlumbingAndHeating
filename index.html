@@ -58,7 +58,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- Bump ?v= whenever styles.css changes so browsers fetch the new file instead of a cached one -->
-  <link rel="stylesheet" href="styles.css?v=2026-11-15.3">
+  <link rel="stylesheet" href="styles.css?v=2026-11-15.4">
 </head>
 <body>
 
@@ -362,6 +362,59 @@
       window.matchMedia("(min-width: 1025px)").addEventListener("change", function (e) {
         if (e.matches) setOpen(false);
       });
+    })();
+
+    // Scroll-in animations. Content is only hidden once this runs, so it
+    // stays visible if JS fails, and is skipped for reduced-motion users.
+    (function () {
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce || !("IntersectionObserver" in window)) return;
+
+      var groups = [
+        ".section-head",
+        ".services-grid > li",
+        ".renewables-intro",
+        ".renewables-cards > li",
+        ".about-grid > *",
+        ".steps-title",
+        ".steps > li",
+        ".contact-grid > *",
+        ".footer-top > *"
+      ];
+      var items = [];
+      groups.forEach(function (sel) {
+        document.querySelectorAll(sel).forEach(function (el, i) {
+          el.classList.add("reveal");
+          // Stagger siblings, capped so long lists don't drag
+          el.style.setProperty("--reveal-delay", Math.min(i, 5) * 90 + "ms");
+          items.push(el);
+        });
+      });
+
+      function done(el) {
+        // Once shown, drop the reveal styles so hover effects aren't delayed
+        el.classList.remove("reveal", "is-visible");
+        el.style.removeProperty("--reveal-delay");
+      }
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var el = entry.target;
+          io.unobserve(el);
+          el.classList.add("is-visible");
+          el.addEventListener("transitionend", function handler(e) {
+            if (e.target !== el || e.propertyName !== "opacity") return;
+            el.removeEventListener("transitionend", handler);
+            done(el);
+          });
+        });
+      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+
+      items.forEach(function (el) { io.observe(el); });
+
+      // Never leave anything hidden when printing
+      window.addEventListener("beforeprint", function () { items.forEach(done); });
     })();
   </script>
 </body>
