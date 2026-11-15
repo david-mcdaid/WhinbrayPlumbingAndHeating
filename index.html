@@ -1,34 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>document.documentElement.classList.add("js")</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>McLaughlin Plumbing</title>
-  <meta name="description" content="McLaughlin Plumbing — reliable, local plumbing and heating services. Repairs, installations, and emergency call-outs.">
+  <title>Whinbray Plumbing &amp; Heating | Plumbers in Donegal</title>
+  <meta name="description" content="Whinbray Plumbing &amp; Heating — reliable plumbing, heating, heat pumps and ventilation across Donegal and surrounding areas. Free quotes and emergency call-outs.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <header>
-    <div class="container nav">
-      <a href="#" class="logo">McLaughlin <span>Plumbing</span></a>
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span class="topbar-area">Plumbing, heating &amp; renewables across Donegal and surrounding areas</span>
       <!-- TODO: replace with real phone number -->
-      <a href="tel:+440000000000" class="nav-phone">📞 Call Now</a>
+      <a href="tel:+353000000000" class="topbar-phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+        Call 000 000 0000
+      </a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#" class="logo" aria-label="Whinbray Plumbing &amp; Heating, home">
+        <svg class="logo-mark" width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#1557C0"/><path d="M20 9s-8 9-8 15a8 8 0 0 0 16 0c0-6-8-15-8-15z" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/></svg>
+        <span class="logo-text"><strong>WHINBRAY</strong><small>PLUMBING &amp; HEATING</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <svg class="icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <nav id="site-nav" class="nav-menu" aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="btn btn-primary nav-cta">Get a free quote</a>
+      </nav>
     </div>
   </header>
 
   <section class="hero">
     <div class="container">
       <h1>Reliable plumbing, done right the first time.</h1>
-      <p>From leaking taps to full bathroom installs, McLaughlin Plumbing delivers honest, professional work at a fair price.</p>
+      <p>From leaking taps to new heat pumps, Whinbray Plumbing &amp; Heating delivers honest, professional work at a fair price.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
         <a href="#services" class="btn btn-outline">Our Services</a>
@@ -87,7 +107,7 @@
   <section id="about" class="about">
     <div class="container about-grid">
       <div>
-        <h2 class="section-title">Why choose McLaughlin Plumbing?</h2>
+        <h2 class="section-title">Why choose Whinbray?</h2>
         <p>We're a local, family-run business built on word of mouth. We turn up when we say we will, explain the work clearly, and leave your home clean and tidy.</p>
         <ul class="about-list">
           <li>Qualified, experienced plumbers</li>
@@ -123,7 +143,7 @@
         <div class="contact-info">
           <div class="item">
             <div class="label">Phone</div>
-            <div class="value"><a href="tel:+440000000000">000 0000 0000</a></div>
+            <div class="value"><a href="tel:+353000000000">000 0000 0000</a></div>
           </div>
           <div class="item">
             <div class="label">Email</div>
@@ -131,7 +151,7 @@
           </div>
           <div class="item">
             <div class="label">Service Area</div>
-            <div class="value">Your town &amp; surrounding areas</div>
+            <div class="value">Donegal &amp; surrounding areas</div>
           </div>
           <div class="item">
             <div class="label">Hours</div>
@@ -153,13 +173,39 @@
 
   <footer>
     <div class="container footer-inner">
-      <div>&copy; <span id="year"></span> McLaughlin Plumbing. All rights reserved.</div>
+      <div>&copy; <span id="year"></span> Whinbray Plumbing &amp; Heating. All rights reserved.</div>
       <div><a href="#services">Services</a> · <a href="#about">About</a> · <a href="#contact">Contact</a></div>
     </div>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile menu
+    (function () {
+      var header = document.querySelector(".site-header");
+      var toggle = header.querySelector(".nav-toggle");
+      function setOpen(open) {
+        header.classList.toggle("is-open", open);
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      }
+      toggle.addEventListener("click", function () {
+        setOpen(!header.classList.contains("is-open"));
+      });
+      header.querySelectorAll(".nav-menu a").forEach(function (link) {
+        link.addEventListener("click", function () { setOpen(false); });
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && header.classList.contains("is-open")) {
+          setOpen(false);
+          toggle.focus();
+        }
+      });
+      window.matchMedia("(min-width: 861px)").addEventListener("change", function (e) {
+        if (e.matches) setOpen(false);
+      });
+    })();
   </script>
 </body>
 </html>
